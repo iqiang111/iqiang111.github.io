@@ -18,6 +18,7 @@ Currently, I am working on unsupervised anomaly prediction for multivariate time
 
 * **M.S. Student**, School of Computer and Information, Hefei University of Technology, 2025 -- 2028
 * **B.E. Student**, School of Computer Science and Technology, Anhui University of Technology, 2021 -- 2025
+
 ## News
 
 * **[2026]** I am working on unsupervised multivariate time series anomaly prediction.
@@ -26,8 +27,8 @@ Currently, I am working on unsupervised anomaly prediction for multivariate time
 ## Contact
 
 * Email: [2025170751@mail.hfut.edu.cn](mailto:2025170751@mail.hfut.edu.cn)
-* ORCID: https://orcid.org/0009-0000-6089-3312
-* GitHub: https://github.com/iqiang111
+* ORCID: [https://orcid.org/0009-0000-6089-3312](https://orcid.org/0009-0000-6089-3312)
+* GitHub: [https://github.com/iqiang111](https://github.com/iqiang111)
 
 
 <!-- 暂时没有出版物和 服务经历 正在努力ing fighting -->
