@@ -49,6 +49,9 @@ remote_theme: yaoyao-liu/minimal-light
 collections:
   weekly:
     output: true
+    # Weekly notes use their publication date. Allow a note dated slightly
+    # ahead of the build server's clock to generate its detail page as well.
+    future: true
     permalink: /weekly/:name/
 
 defaults:
