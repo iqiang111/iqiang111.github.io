@@ -43,15 +43,16 @@ font: "Serif" # or "Sans Serif"
 # See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
 remote_theme: yaoyao-liu/minimal-light
 
+# Generate detail pages for Weekly notes whose publication date is ahead of
+# the GitHub Pages build clock.
+future: true
+
 # Weekly notes
 # Add one Markdown file to `_weekly/` for each week. Jekyll will generate the
 # archive and a standalone page for every note automatically.
 collections:
   weekly:
     output: true
-    # Weekly notes use their publication date. Allow a note dated slightly
-    # ahead of the build server's clock to generate its detail page as well.
-    future: true
     permalink: /weekly/:name/
 
 defaults:
