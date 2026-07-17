@@ -1,0 +1,427 @@
+:root {
+  --weekly-ink: #043361;
+  --weekly-accent: #1688b7;
+  --weekly-muted: #667684;
+  --weekly-line: #dbe6eb;
+  --weekly-soft: #f2f8fa;
+  --weekly-paper: #ffffff;
+  --weekly-code: #17384d;
+}
+
+.profile-name-link,
+.profile-name-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile-name-link:focus-visible,
+.weekly-entry a:focus-visible,
+.weekly-post a:focus-visible {
+  outline: 2px solid var(--weekly-accent);
+  outline-offset: 4px;
+}
+
+.weekly-page,
+.weekly-post {
+  color: inherit;
+}
+
+.weekly-hero {
+  margin: 0 0 2.15rem;
+}
+
+.weekly-eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--weekly-accent);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.weekly-hero h1,
+.weekly-post__header h1 {
+  margin: 0;
+  color: var(--weekly-ink);
+  font-size: 2.25rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1.16;
+}
+
+.weekly-manifesto {
+  max-width: 39rem;
+  margin: 1rem 0 1.6rem;
+  color: #465762;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.weekly-signal {
+  position: relative;
+  height: 6.5rem;
+  overflow: hidden;
+  border: 1px solid var(--weekly-line);
+  background-color: var(--weekly-soft);
+  background-image:
+    linear-gradient(to right, rgba(4, 51, 97, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(4, 51, 97, 0.045) 1px, transparent 1px);
+  background-size: 3.25rem 100%, 100% 1.625rem;
+}
+
+.weekly-signal svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.weekly-signal__label {
+  position: absolute;
+  z-index: 1;
+  top: 0.7rem;
+  left: 0.85rem;
+  color: var(--weekly-muted);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+}
+
+.weekly-signal__grid {
+  fill: none;
+  stroke: rgba(4, 51, 97, 0.08);
+  stroke-width: 1;
+}
+
+.weekly-signal__line {
+  fill: none;
+  stroke: var(--weekly-accent);
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  stroke-linecap: round;
+  stroke-width: 2.4;
+  vector-effect: non-scaling-stroke;
+  animation: weekly-line-draw 1s cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards;
+}
+
+.weekly-signal__point {
+  fill: var(--weekly-paper);
+  stroke: var(--weekly-accent);
+  stroke-width: 2;
+  transform-box: fill-box;
+  vector-effect: non-scaling-stroke;
+  animation: weekly-point-in 280ms ease-out 920ms both;
+}
+
+@keyframes weekly-line-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes weekly-point-in {
+  from { opacity: 0; transform: scale(0.4); transform-origin: center; }
+  to { opacity: 1; transform: scale(1); transform-origin: center; }
+}
+
+.weekly-archive__heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.weekly-archive__heading {
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--weekly-ink);
+}
+
+.weekly-archive__heading h2 {
+  margin-bottom: 0;
+}
+
+.weekly-archive__heading > span {
+  color: var(--weekly-muted);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.weekly-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.weekly-entry {
+  display: grid;
+  grid-template-columns: 6.9rem minmax(0, 1fr);
+  gap: 1.35rem;
+  padding: 1.55rem 0;
+  border-bottom: 1px solid var(--weekly-line);
+}
+
+.weekly-entry__index {
+  padding-top: 0.18rem;
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  line-height: 1.35;
+}
+
+.weekly-entry__index time {
+  display: block;
+}
+
+.weekly-entry__index time {
+  color: var(--weekly-ink);
+  font-size: 0.78rem;
+}
+
+.weekly-entry__title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.weekly-entry h2 {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.weekly-entry h2 a {
+  color: var(--weekly-ink);
+}
+
+.weekly-entry h2 a:hover {
+  color: var(--weekly-accent);
+}
+
+.weekly-entry article > p {
+  margin: 0.55rem 0 0;
+  color: #566671;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.weekly-latest {
+  color: var(--weekly-accent);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.weekly-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.7rem;
+  color: var(--weekly-muted);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.69rem;
+}
+
+.weekly-tags span + span::before {
+  margin: 0 0.45rem;
+  color: var(--weekly-line);
+  content: "/";
+}
+
+.weekly-empty {
+  padding: 0.9rem 1rem;
+  border-left: 2px solid var(--weekly-accent);
+  background: var(--weekly-soft);
+  color: var(--weekly-muted);
+}
+
+.weekly-empty--archive {
+  margin-top: 1.5rem;
+}
+
+.weekly-empty p:last-child {
+  margin-bottom: 0;
+}
+
+.weekly-post__back {
+  display: inline-block;
+  margin-bottom: 1.65rem;
+  color: var(--weekly-muted);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.74rem;
+}
+
+.weekly-post__back:hover {
+  color: var(--weekly-ink);
+}
+
+.weekly-post__header {
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--weekly-line);
+}
+
+.weekly-post__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.1rem;
+  margin: 1rem 0 0;
+  color: var(--weekly-muted);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.73rem;
+}
+
+.weekly-post__meta span::before {
+  margin-right: 1.1rem;
+  color: var(--weekly-line);
+  content: "/";
+}
+
+.weekly-post__summary {
+  max-width: 37rem;
+  margin: 1.05rem 0 0;
+  color: #52636e;
+  font-size: 0.96rem;
+  line-height: 1.75;
+}
+
+.weekly-post__content {
+  padding: 1.65rem 0 1.2rem;
+  font-size: 0.96rem;
+  line-height: 1.82;
+}
+
+.weekly-post__content h2 {
+  margin: 2rem 0 0.85rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--weekly-accent);
+  color: var(--weekly-ink);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.weekly-post__content h2:first-child {
+  margin-top: 0;
+}
+
+.weekly-post__content h3 {
+  margin: 1.6rem 0 0.7rem;
+  color: var(--weekly-ink);
+  font-size: 1.04rem;
+}
+
+.weekly-post__content p,
+.weekly-post__content ul,
+.weekly-post__content ol {
+  margin-bottom: 1rem;
+}
+
+.weekly-post__content li + li {
+  margin-top: 0.38rem;
+}
+
+.weekly-post__content blockquote {
+  margin: 0 0 1.45rem;
+  padding: 1rem 1.1rem;
+  border: 0;
+  border-left: 2px solid var(--weekly-accent);
+  background: var(--weekly-soft);
+  color: var(--weekly-code);
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.weekly-post__content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.weekly-post__content code,
+.weekly-empty code {
+  padding: 0.1em 0.32em;
+  background: var(--weekly-soft);
+  color: var(--weekly-code);
+  font-size: 0.88em;
+}
+
+.weekly-post__content input[type="checkbox"] {
+  margin: 0 0.45rem 0 -1.15rem;
+  accent-color: var(--weekly-accent);
+}
+
+.weekly-post__nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--weekly-line);
+}
+
+.weekly-post__nav-link {
+  min-width: 0;
+  padding: 0.85rem 0;
+}
+
+.weekly-post__nav-link--next {
+  grid-column: 2;
+  text-align: right;
+}
+
+.weekly-post__nav-link span,
+.weekly-post__nav-link strong {
+  display: block;
+}
+
+.weekly-post__nav-link span {
+  margin-bottom: 0.3rem;
+  color: var(--weekly-muted);
+  font-family: "Ubuntu Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.69rem;
+  font-weight: 400;
+}
+
+.weekly-post__nav-link strong {
+  overflow: hidden;
+  color: var(--weekly-ink);
+  font-size: 0.84rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.weekly-post__nav-link:hover strong {
+  color: var(--weekly-accent);
+}
+
+@media print, screen and (max-width: 600px) {
+  .weekly-hero h1,
+  .weekly-post__header h1 {
+    font-size: 1.85rem;
+  }
+
+  .weekly-signal {
+    height: 5.6rem;
+  }
+
+  .weekly-entry {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    padding: 1.3rem 0;
+  }
+
+  .weekly-post__meta span {
+    width: 100%;
+  }
+
+  .weekly-post__meta span::before {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .weekly-signal__line,
+  .weekly-signal__point {
+    animation: none;
+    transition: none;
+  }
+
+  .weekly-signal__line {
+    stroke-dashoffset: 0;
+  }
+}

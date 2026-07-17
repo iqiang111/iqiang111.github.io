@@ -1,0 +1,63 @@
+---
+layout: homepage
+title: Weekly
+summary: 每周记录研究进展、完成事项、思考与下一步安排。
+lang: zh-CN
+permalink: /weekly/
+---
+
+{% assign weeklies = site.weekly | sort: "date" | reverse %}
+<main class="weekly-page">
+  <div class="weekly-hero">
+    <p class="weekly-eyebrow">Weekly / Training log</p>
+    <h1>给时间留下反馈</h1>
+    <p class="weekly-manifesto">周记像模型训练中的日志：它不证明这一周有多努力，只负责让进展、损失和时间消耗变得可观察，避免在没有反馈的情况下重复浪费。</p>
+
+    <div class="weekly-signal" aria-hidden="true">
+      <span class="weekly-signal__label">observe → reflect → update</span>
+      <svg viewBox="0 0 620 104" preserveAspectRatio="none" focusable="false">
+        <path class="weekly-signal__grid" d="M0 26H620 M0 52H620 M0 78H620" />
+        <path class="weekly-signal__line" pathLength="1" d="M4 71 C48 69, 64 79, 112 65 S180 69, 222 54 S291 62, 336 44 S408 53, 455 35 S530 43, 612 18" />
+        <circle class="weekly-signal__point" cx="612" cy="18" r="4" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="weekly-archive__heading">
+    <h2>全部记录</h2>
+    <span>{{ weeklies.size }} entries</span>
+  </div>
+
+  {% if weeklies.size > 0 %}
+  <ol class="weekly-list">
+    {% for post in weeklies %}
+    <li class="weekly-entry">
+      <div class="weekly-entry__index">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+      </div>
+      <article>
+        <div class="weekly-entry__title-row">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if forloop.first %}<span class="weekly-latest">Latest</span>{% endif %}
+        </div>
+        {% if post.summary %}
+        <p>{{ post.summary }}</p>
+        {% else %}
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 140 }}</p>
+        {% endif %}
+        {% if post.tags.size > 0 %}
+        <div class="weekly-tags" aria-label="标签">
+          {% for tag in post.tags %}<span>{{ tag }}</span>{% endfor %}
+        </div>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <div class="weekly-empty weekly-empty--archive">
+    <p>还没有周记。</p>
+    <p>在 <code>_weekly</code> 文件夹中新建一个 Markdown 文件，第一条训练日志就会出现在这里。</p>
+  </div>
+  {% endif %}
+</main>

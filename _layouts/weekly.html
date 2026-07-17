@@ -1,0 +1,43 @@
+---
+layout: homepage
+---
+
+<article class="weekly-post">
+  <a class="weekly-post__back" href="{{ '/weekly/' | relative_url }}"><span aria-hidden="true">←</span> 返回 Weekly</a>
+
+  <div class="weekly-post__header">
+    <p class="weekly-eyebrow">Weekly / Training log</p>
+    <h1>{{ page.title }}</h1>
+    <div class="weekly-post__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">发布于 {{ page.date | date: "%Y年%m月%d日" }}</time>
+      {% if page.period %}<span>{{ page.period }}</span>{% endif %}
+    </div>
+    {% if page.summary %}<p class="weekly-post__summary">{{ page.summary }}</p>{% endif %}
+    {% if page.tags.size > 0 %}
+    <div class="weekly-tags" aria-label="标签">
+      {% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="weekly-post__content">
+    {{ content }}
+  </div>
+
+  {% if page.previous or page.next %}
+  <nav class="weekly-post__nav" aria-label="周记翻页">
+    {% if page.previous %}
+    <a class="weekly-post__nav-link weekly-post__nav-link--previous" href="{{ page.previous.url | relative_url }}">
+      <span>← 较早一篇</span>
+      <strong>{{ page.previous.title }}</strong>
+    </a>
+    {% endif %}
+    {% if page.next %}
+    <a class="weekly-post__nav-link weekly-post__nav-link--next" href="{{ page.next.url | relative_url }}">
+      <span>较新一篇 →</span>
+      <strong>{{ page.next.title }}</strong>
+    </a>
+    {% endif %}
+  </nav>
+  {% endif %}
+</article>

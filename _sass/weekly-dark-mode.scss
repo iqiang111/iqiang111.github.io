@@ -1,0 +1,32 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --weekly-ink: #72cdf2;
+    --weekly-accent: #3eb7f0;
+    --weekly-muted: #9daab4;
+    --weekly-line: #3a414d;
+    --weekly-soft: #272a35;
+    --weekly-paper: #20212b;
+    --weekly-code: #d8e6ed;
+  }
+
+  .weekly-manifesto,
+  .weekly-entry article > p,
+  .weekly-post__summary {
+    color: #b8c1c8;
+  }
+
+  .weekly-signal {
+    background-image:
+      linear-gradient(to right, rgba(114, 205, 242, 0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(114, 205, 242, 0.06) 1px, transparent 1px);
+  }
+
+  .weekly-signal__grid {
+    stroke: rgba(114, 205, 242, 0.09);
+  }
+
+  .weekly-post__content code,
+  .weekly-empty code {
+    color: #d8e6ed;
+  }
+}
